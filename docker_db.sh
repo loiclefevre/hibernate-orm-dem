@@ -606,7 +606,7 @@ oracle_18() {
 
 oracle_21() {
     $CONTAINER_CLI rm -f oracle || true
-    # We need to use the defaults
+    ## We need to use the defaults
     # SYSTEM/Oracle18
     $CONTAINER_CLI run --name oracle -d -p 1521:1521 -e ORACLE_PASSWORD=Oracle18 \
        --health-cmd healthcheck.sh \
