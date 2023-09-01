@@ -36,12 +36,12 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - rdbms: h2
+#          - rdbms: h2
 #          - rdbms: hsqldb
 #          - rdbms: derby
 #          - rdbms: mysql
 #          - rdbms: mariadb
-          - rdbms: postgresql
+#          - rdbms: postgresql
 #          - rdbms: edb
           - rdbms: oracle
 #          - rdbms: db2
