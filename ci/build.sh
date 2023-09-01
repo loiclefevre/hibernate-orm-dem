@@ -53,4 +53,5 @@ function logAndExec() {
 }
 
 # Clean by default otherwise the PackagedEntityManager tests fail on a node that previously ran a different DB
-logAndExec ./gradlew clean check ${goal} "${@}" -Plog-test-progress=true --stacktrace
+#logAndExec ./gradlew clean check ${goal} "${@}" -Plog-test-progress=true --stacktrace
+logAndExec ./gradlew clean :hibernate-core:test --tests "org.hibernate.orm.test.locking.jpa.FollowOnLockingTest" ${goal} "${@}" -Plog-test-progress=true --stacktrace
