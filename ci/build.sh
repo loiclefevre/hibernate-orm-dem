@@ -19,6 +19,9 @@ elif [ "$RDBMS" == "edb" ] || [ "$RDBMS" == "edb_10" ]; then
 elif [ "$RDBMS" == "oracle" ]; then
   # I have no idea why, but these tests don't seem to work on CI...
   goal="-Pdb=oracle_ci -PexcludeTests=**.LockTest.testQueryTimeout*"
+elif [ "$RDBMS" == "oracle_atps" ]; then
+  # I have no idea why, but these tests don't seem to work on CI...
+  goal="-Pdb=oracle_cloud_autonomous_tls -PrunID=0 -PdbHost=adb.eu-frankfurt-1 -PdbService=ij1tyzir3wpwlpe_atps -PexcludeTests=**.LockTest.testQueryTimeout*"
 elif [ "$RDBMS" == "oracle_11_2" ]; then
   # I have no idea why, but these tests don't seem to work on CI...
   goal="-Pdb=oracle_legacy_ci -PexcludeTests=**.LockTest.testQueryTimeout*"
