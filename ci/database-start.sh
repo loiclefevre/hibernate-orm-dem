@@ -14,6 +14,8 @@ elif [ "$RDBMS" == 'db2' ]; then
   bash $DIR/../docker_db.sh db2
 elif [ "$RDBMS" == 'oracle' ]; then
   bash $DIR/../docker_db.sh oracle
+elif [ "$RDBMS" == 'oracle_atps' ]; then
+  bash $DIR/../docker_db.sh oracle_atps
 elif [ "$RDBMS" == 'mssql' ]; then
   bash $DIR/../docker_db.sh mssql
 elif [ "$RDBMS" == 'sybase' ]; then

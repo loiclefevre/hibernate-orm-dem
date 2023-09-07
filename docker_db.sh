@@ -574,6 +574,10 @@ EOF\""
   echo "Oracle successfully started"
 }
 
+oracle_atps() {
+  echo "Managing Oracle Autonomous Database..."
+}
+
 oracle() {
   oracle_21
 }
