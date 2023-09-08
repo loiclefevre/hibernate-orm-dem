@@ -43,7 +43,7 @@ jobs:
 #          - rdbms: mariadb
 #          - rdbms: postgresql
 #          - rdbms: edb
-          - rdbms: oracle
+#          - rdbms: oracle
           - rdbms: oracle_atps
 #          - rdbms: db2
 #          - rdbms: mssql
@@ -86,6 +86,7 @@ jobs:
       - name: Run build script
         env:
           RDBMS: ${{ matrix.rdbms }}
+          RUNID: ${{ github.run_number }}
         run: ./ci/build-github.sh
         shell: bash
       - name: Upload test reports (if Gradle failed)
