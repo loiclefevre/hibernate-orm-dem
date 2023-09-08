@@ -43,7 +43,7 @@ jobs:
 #          - rdbms: mariadb
 #          - rdbms: postgresql
 #          - rdbms: edb
-#          - rdbms: oracle
+          - rdbms: oracle
           - rdbms: oracle_atps
 #          - rdbms: db2
 #          - rdbms: mssql
