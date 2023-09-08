@@ -12,6 +12,7 @@ ext {
         db = project.hasProperty('db') ? project.getProperty('db') : 'h2'
         dbHost = System.getProperty( 'dbHost', 'localhost' )
         dbService = System.getProperty( 'dbService', '' )
+        runID = System.getProperty( 'runID', '' )
         dbBundle = [
                 h2 : [
                         'db.dialect' : 'org.hibernate.dialect.H2Dialect',
@@ -159,7 +160,7 @@ ext {
                 oracle_cloud_autonomous_tls : [
                         'db.dialect' : 'org.hibernate.dialect.OracleDialect',
                         'jdbc.driver': 'oracle.jdbc.OracleDriver',
-                        'jdbc.user'  : 'hibernate_orm_test',
+                        'jdbc.user'  : 'hibernate_orm_test_' + runID,
                         'jdbc.pass'  : 'Oracle_19_Password',
                         // Requires dbHost (pointing to the right cloud region) AND dbService (unique database name).
                         //
