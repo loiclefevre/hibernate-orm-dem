@@ -596,6 +596,7 @@ oracle_db19c() {
     alter user hibernate_orm_test_$RUNID quota unlimited on users;
     grant all privileges to hibernate_orm_test_$RUNID;
 EOF
+
 }
 
 oracle_db21c() {
