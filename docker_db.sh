@@ -591,7 +591,10 @@ oracle_db19c() {
   export SERVICE=$(echo $INFO | jq -r '.database' | jq -r '.service')
   export PASSWORD=$(echo $INFO | jq -r '.database' | jq -r '.password')
 
-  /home/opc/sqlcl/bin/sql -v
+cat <<EOF | /home/opc/sqlcl/bin/sql -s system/$PASSWORD@$HOST:1521/$SERVICE create user hibernate_orm_test_$RUNID identified by "Oracle_19_Password" DEFAULT TABLESPACE USERS TEMPORARY TABLESPACE TEMP;
+    alter user hibernate_orm_test_$RUNID quota unlimited on users;
+    grant all privileges to hibernate_orm_test_$RUNID;
+EOF
 }
 
 oracle_db21c() {

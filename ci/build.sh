@@ -26,6 +26,13 @@ elif [ "$RDBMS" == "oracle_atps" ]; then
   export SERVICE=$(echo $INFO | jq -r '.database' | jq -r '.service')
   # I have no idea why, but these tests don't seem to work on CI...
   goal="-Pdb=oracle_cloud_autonomous_tls -DrunID=$RUNID -DdbHost=$HOST -DdbService=$SERVICE -PexcludeTests=**.LockTest.testQueryTimeout*"
+elif [ "$RDBMS" == "oracle_db19c" ]; then
+  echo "Managing Oracle Database 19c..."
+  export INFO=$(curl -s -X GET "https://ij1tyzir3wpwlpe-atlas.adb.eu-frankfurt-1.oraclecloudapps.com/ords/atlas/admin/database?type=db19c&hostname=`hostname`" -H 'accept: application/json')
+  export HOST=$(echo $INFO | jq -r '.database' | jq -r '.host')
+  export SERVICE=$(echo $INFO | jq -r '.database' | jq -r '.service')
+  # I have no idea why, but these tests don't seem to work on CI...
+  goal="-Pdb=oracle_cloud_db19c -DrunID=$RUNID -DdbHost=$HOST -DdbService=$SERVICE -PexcludeTests=**.LockTest.testQueryTimeout*"
 elif [ "$RDBMS" == "oracle_11_2" ]; then
   # I have no idea why, but these tests don't seem to work on CI...
   goal="-Pdb=oracle_legacy_ci -PexcludeTests=**.LockTest.testQueryTimeout*"
