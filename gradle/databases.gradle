@@ -181,6 +181,30 @@ ext {
                         'jdbc.url'   : 'jdbc:oracle:thin:@' + dbHost + ':1521/' + dbService,
                         'connection.init_sql' : ''
                 ],
+                oracle_cloud_db21c : [
+                        'db.dialect' : 'org.hibernate.dialect.OracleDialect',
+                        'jdbc.driver': 'oracle.jdbc.OracleDriver',
+                        'jdbc.user'  : 'hibernate_orm_test_' + runID,
+                        'jdbc.pass'  : 'Oracle_21_Password',
+                        // Requires dbHost (pointing to the right cloud region) AND dbService (unique database name).
+                        //
+                        // To avoid hibernate-spatial tests failure, JVM must be enabled as stated in documentation:
+                        // https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/autonomous-oracle-java.html
+                        'jdbc.url'   : 'jdbc:oracle:thin:@' + dbHost + ':1521/' + dbService,
+                        'connection.init_sql' : ''
+                ],
+                oracle_cloud_db23c : [
+                        'db.dialect' : 'org.hibernate.dialect.OracleDialect',
+                        'jdbc.driver': 'oracle.jdbc.OracleDriver',
+                        'jdbc.user'  : 'hibernate_orm_test_' + runID,
+                        'jdbc.pass'  : 'Oracle_23_Password',
+                        // Requires dbHost (pointing to the right cloud region) AND dbService (unique database name).
+                        //
+                        // To avoid hibernate-spatial tests failure, JVM must be enabled as stated in documentation:
+                        // https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/autonomous-oracle-java.html
+                        'jdbc.url'   : 'jdbc:oracle:thin:@' + dbHost + ':1521/' + dbService,
+                        'connection.init_sql' : ''
+                ],
                 mssql : [
                         'db.dialect' : 'org.hibernate.dialect.SQLServerDialect',
                         'jdbc.driver': 'com.microsoft.sqlserver.jdbc.SQLServerDriver',
