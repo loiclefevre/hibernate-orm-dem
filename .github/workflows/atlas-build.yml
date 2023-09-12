@@ -45,6 +45,7 @@ jobs:
 #          - rdbms: edb
 #          - rdbms: oracle
           - rdbms: oracle_atps
+          - rdbms: oracle_db19c
 #          - rdbms: db2
 #          - rdbms: mssql
 #          - rdbms: sybase

@@ -584,6 +584,32 @@ oracle_atps() {
   curl -s -X POST "https://${SERVICE/_/-}.${HOST}.oraclecloudapps.com/ords/admin/_/sql" -H 'content-type: application/sql' -H 'accept: application/json' -basic -u admin:${PASSWORD} --data-ascii "create user hibernate_orm_test_$RUNID identified by \"Oracle_19_Password\" DEFAULT TABLESPACE DATA TEMPORARY TABLESPACE TEMP;alter user hibernate_orm_test_$RUNID quota unlimited on data;grant pdb_dba to hibernate_orm_test_$RUNID;BEGIN ords_admin.enable_schema(p_enabled => TRUE, p_schema => 'hibernate_orm_test_$RUNID', p_url_mapping_type => 'BASE_PATH', p_url_mapping_pattern => 'hibernate_orm_test_$RUNID', p_auto_rest_auth => TRUE); END;"
 }
 
+oracle_db19c() {
+  echo "Managing Oracle Database 19c..."
+  export INFO=$(curl -s -X GET "https://ij1tyzir3wpwlpe-atlas.adb.eu-frankfurt-1.oraclecloudapps.com/ords/atlas/admin/database?type=db19c&hostname=`hostname`" -H 'accept: application/json')
+  export HOST=$(echo $INFO | jq -r '.database' | jq -r '.host')
+  export SERVICE=$(echo $INFO | jq -r '.database' | jq -r '.service')
+  export PASSWORD=$(echo $INFO | jq -r '.database' | jq -r '.password')
+
+  /home/opc/sqlcl/bin/sql -v
+}
+
+oracle_db21c() {
+  echo "Managing Oracle Database 21c..."
+  export INFO=$(curl -s -X GET "https://ij1tyzir3wpwlpe-atlas.adb.eu-frankfurt-1.oraclecloudapps.com/ords/atlas/admin/database?type=db21c&hostname=`hostname`" -H 'accept: application/json')
+  export HOST=$(echo $INFO | jq -r '.database' | jq -r '.host')
+  export SERVICE=$(echo $INFO | jq -r '.database' | jq -r '.service')
+  export PASSWORD=$(echo $INFO | jq -r '.database' | jq -r '.password')
+}
+
+oracle_db23c() {
+  echo "Managing Oracle Database 23c..."
+  export INFO=$(curl -s -X GET "https://ij1tyzir3wpwlpe-atlas.adb.eu-frankfurt-1.oraclecloudapps.com/ords/atlas/admin/database?type=db23c&hostname=`hostname`" -H 'accept: application/json')
+  export HOST=$(echo $INFO | jq -r '.database' | jq -r '.host')
+  export SERVICE=$(echo $INFO | jq -r '.database' | jq -r '.service')
+  export PASSWORD=$(echo $INFO | jq -r '.database' | jq -r '.password')
+}
+
 oracle() {
   oracle_21
 }
