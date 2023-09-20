@@ -44,9 +44,9 @@ jobs:
 #          - rdbms: postgresql
 #          - rdbms: edb
 #          - rdbms: oracle
-#          - rdbms: oracle_atps
-#          - rdbms: oracle_db19c
-#          - rdbms: oracle_db21c
+          - rdbms: oracle_atps
+          - rdbms: oracle_db19c
+          - rdbms: oracle_db21c
           - rdbms: oracle_db23c
 #          - rdbms: db2
 #          - rdbms: mssql
