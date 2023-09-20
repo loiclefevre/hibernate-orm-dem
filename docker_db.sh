@@ -576,7 +576,7 @@ EOF\""
 
 oracle_atps() {
   echo "Managing Oracle Autonomous Database..."
-  export INFO=$(curl -s -X GET "https://ij1tyzir3wpwlpe-atlas.adb.eu-frankfurt-1.oraclecloudapps.com/ords/atlas/admin/database?type=autonomous&hostname=`hostname`" -H 'accept: application/json')
+  export INFO=$(curl -s -k -L -X GET "https://api.atlas-controller.oraclecloud.com/ords/atlas/admin/database?type=autonomous&hostname=`hostname`" -H 'accept: application/json')
   export HOST=$(echo $INFO | jq -r '.database' | jq -r '.host')
   export SERVICE=$(echo $INFO | jq -r '.database' | jq -r '.service')
   export PASSWORD=$(echo $INFO | jq -r '.database' | jq -r '.password')
@@ -586,7 +586,7 @@ oracle_atps() {
 
 oracle_db19c() {
   echo "Managing Oracle Database 19c..."
-  export INFO=$(curl -s -X GET "https://ij1tyzir3wpwlpe-atlas.adb.eu-frankfurt-1.oraclecloudapps.com/ords/atlas/admin/database?type=db19c&hostname=`hostname`" -H 'accept: application/json')
+  export INFO=$(curl -s -k -L -X GET "https://api.atlas-controller.oraclecloud.com/ords/atlas/admin/database?type=db19c&hostname=`hostname`" -H 'accept: application/json')
   export HOST=$(echo $INFO | jq -r '.database' | jq -r '.host')
   export SERVICE=$(echo $INFO | jq -r '.database' | jq -r '.service')
   export PASSWORD=$(echo $INFO | jq -r '.database' | jq -r '.password')
@@ -601,7 +601,7 @@ EOF
 
 oracle_db21c() {
   echo "Managing Oracle Database 21c..."
-  export INFO=$(curl -s -X GET "https://ij1tyzir3wpwlpe-atlas.adb.eu-frankfurt-1.oraclecloudapps.com/ords/atlas/admin/database?type=db21c&hostname=`hostname`" -H 'accept: application/json')
+  export INFO=$(curl -s -k -L -X GET "https://api.atlas-controller.oraclecloud.com/ords/atlas/admin/database?type=db21c&hostname=`hostname`" -H 'accept: application/json')
   export HOST=$(echo $INFO | jq -r '.database' | jq -r '.host')
   export SERVICE=$(echo $INFO | jq -r '.database' | jq -r '.service')
   export PASSWORD=$(echo $INFO | jq -r '.database' | jq -r '.password')
@@ -615,7 +615,7 @@ EOF
 
 oracle_db23c() {
   echo "Managing Oracle Database 23c..."
-  export INFO=$(curl -s -X GET "https://ij1tyzir3wpwlpe-atlas.adb.eu-frankfurt-1.oraclecloudapps.com/ords/atlas/admin/database?type=db23c&hostname=`hostname`" -H 'accept: application/json')
+  export INFO=$(curl -s -k -L -X GET "https://api.atlas-controller.oraclecloud.com/ords/atlas/admin/database?type=db23c&hostname=`hostname`" -H 'accept: application/json')
   export HOST=$(echo $INFO | jq -r '.database' | jq -r '.host')
   export SERVICE=$(echo $INFO | jq -r '.database' | jq -r '.service')
   export PASSWORD=$(echo $INFO | jq -r '.database' | jq -r '.password')
