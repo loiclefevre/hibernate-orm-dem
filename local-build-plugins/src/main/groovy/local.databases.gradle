@@ -9,6 +9,8 @@ ext {
     db = project.getProperty('db')
     dbHost = System.getProperty( 'dbHost', 'localhost' )
     dbService = System.getProperty( 'dbService', '' )
+    dbPassword = System.getProperty( 'dbPassword', '' )
+    dbConnectionStringSuffix = System.getProperty( 'dbConnectionStringSuffix', '' )
     runID = System.getProperty( 'runID', '' )
 
     dbBundle = [
@@ -277,6 +279,15 @@ ext {
                     'jdbc.url'   : 'jdbc:oracle:thin:@' + dbHost + ':1521/' + dbService,
                     'jdbc.datasource' : 'oracle.jdbc.OracleDriver',
 //                        'jdbc.datasource' : 'oracle.jdbc.datasource.impl.OracleDataSource',
+                    'connection.init_sql' : ''
+            ],
+            oracle_test_pilot_autonomous_transaction_processing_serverless: [
+                    'db.dialect' : 'org.hibernate.dialect.OracleDialect',
+                    'jdbc.driver': 'oracle.jdbc.OracleDriver',
+                    'jdbc.user'  : 'hibernate_orm_test_' + runID,
+                    'jdbc.pass'  : dbPassword,
+                    'jdbc.url'   : 'jdbc:oracle:thin:@' + dbConnectionStringSuffix + '?oracle.jdbc.enableQueryResultCache=false&oracle.jdbc.thinForceDNSLoadBalancing=true&tcp.nodelay=yes',
+                    'jdbc.datasource' : 'oracle.jdbc.OracleDriver',
                     'connection.init_sql' : ''
             ],
             mssql : [
