@@ -290,6 +290,33 @@ ext {
                     'jdbc.datasource' : 'oracle.jdbc.OracleDriver',
                     'connection.init_sql' : ''
             ],
+            oracle_test_pilot_base_database_service_19c: [
+                    'db.dialect' : 'org.hibernate.dialect.OracleDialect',
+                    'jdbc.driver': 'oracle.jdbc.OracleDriver',
+                    'jdbc.user'  : 'hibernate_orm_test_' + runID,
+                    'jdbc.pass'  : dbPassword,
+                    'jdbc.url'   : 'jdbc:oracle:thin:@' + dbConnectionStringSuffix + '?oracle.jdbc.enableQueryResultCache=false&oracle.jdbc.thinForceDNSLoadBalancing=true&tcp.nodelay=yes',
+                    'jdbc.datasource' : 'oracle.jdbc.OracleDriver',
+                    'connection.init_sql' : ''
+            ],
+            oracle_test_pilot_base_database_service_21c: [
+                    'db.dialect' : 'org.hibernate.dialect.OracleDialect',
+                    'jdbc.driver': 'oracle.jdbc.OracleDriver',
+                    'jdbc.user'  : 'hibernate_orm_test_' + runID,
+                    'jdbc.pass'  : dbPassword,
+                    'jdbc.url'   : 'jdbc:oracle:thin:@' + dbConnectionStringSuffix + '?oracle.jdbc.enableQueryResultCache=false&oracle.jdbc.thinForceDNSLoadBalancing=true&tcp.nodelay=yes',
+                    'jdbc.datasource' : 'oracle.jdbc.OracleDriver',
+                    'connection.init_sql' : ''
+            ],
+            oracle_test_pilot_base_database_service_23ai: [
+                    'db.dialect' : 'org.hibernate.dialect.OracleDialect',
+                    'jdbc.driver': 'oracle.jdbc.OracleDriver',
+                    'jdbc.user'  : 'hibernate_orm_test_' + runID,
+                    'jdbc.pass'  : dbPassword,
+                    'jdbc.url'   : 'jdbc:oracle:thin:@' + dbConnectionStringSuffix + '?oracle.jdbc.enableQueryResultCache=false&oracle.jdbc.thinForceDNSLoadBalancing=true&tcp.nodelay=yes',
+                    'jdbc.datasource' : 'oracle.jdbc.OracleDriver',
+                    'connection.init_sql' : ''
+            ],
             mssql : [
                     'db.dialect' : 'org.hibernate.dialect.SQLServerDialect',
                     'jdbc.driver': 'com.microsoft.sqlserver.jdbc.SQLServerDriver',
