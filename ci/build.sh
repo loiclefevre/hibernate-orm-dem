@@ -61,11 +61,11 @@ elif [ "$RDBMS" == "oracle_db23c" ]; then
 elif [ "$RDBMS" == "autonomous-transaction-processing-serverless" ]; then
   goal="-Pdb=oracle_test_pilot_autonomous_transaction_processing_serverless -DrunID=$RUNID -DdbPassword=$TESTPILOT_PASSWORD -DdbConnectionStringSuffix=$TESTPILOT_CONNECTION_STRING_SUFFIX"
 elif [ "$RDBMS" == "base-database-service-19c" ]; then
-  goal="-Pdb=oracle_test_pilot_base_database_service_19c -DrunID=$RUNID -DdbPassword=$TESTPILOT_PASSWORD -DdbHost=$HOST -DdbService=$SERVICE"
+  goal="-Pdb=oracle_test_pilot_base_database_service_19c -DrunID=$RUNID -DdbPassword=$TESTPILOT_PASSWORD -DdbConnectionStringSuffix=$TESTPILOT_CONNECTION_STRING_SUFFIX"
 elif [ "$RDBMS" == "base-database-service-21c" ]; then
-  goal="-Pdb=oracle_test_pilot_base_database_service_21c -DrunID=$RUNID -DdbPassword=$TESTPILOT_PASSWORD -DdbHost=$HOST -DdbService=$SERVICE"
+  goal="-Pdb=oracle_test_pilot_base_database_service_21c -DrunID=$RUNID -DdbPassword=$TESTPILOT_PASSWORD -DdbConnectionStringSuffix=$TESTPILOT_CONNECTION_STRING_SUFFIX"
 elif [ "$RDBMS" == "base-database-service-23ai" ]; then
-  goal="-Pdb=oracle_test_pilot_base_database_service_23ai -DrunID=$RUNID -DdbPassword=$TESTPILOT_PASSWORD -DdbHost=$HOST -DdbService=$SERVICE"
+  goal="-Pdb=oracle_test_pilot_base_database_service_23ai -DrunID=$RUNID -DdbPassword=$TESTPILOT_PASSWORD -DdbConnectionStringSuffix=$TESTPILOT_CONNECTION_STRING_SUFFIX"
 elif [ "$RDBMS" == "db2" ] || [ "$RDBMS" == "db2_11_5" ]; then
   goal="-Pdb=db2_ci"
 elif [ "$RDBMS" == "mssql" ] || [ "$RDBMS" == "mssql_2017" ]; then
