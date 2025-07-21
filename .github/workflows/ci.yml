@@ -25,7 +25,7 @@ concurrency:
   group: "workflow = ${{ github.workflow }}, ref = ${{ github.event.ref }}, pr = ${{ github.event.pull_request.id }}"
   # Cancel previous builds in the same concurrency group even if they are in progress
   # for pull requests or pushes to forks (not the upstream repository).
-  cancel-in-progress: ${{ github.event_name == 'pull_request' || github.repository != 'hibernate/hibernate-orm' }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' || github.repository != 'loiclefevre/hibernate-orm-dem' }}
 
 jobs:
 
@@ -65,7 +65,7 @@ jobs:
       - name: Generate cache key
         id: cache-key
         run: |
-          CURRENT_BRANCH="${{ github.repository != 'hibernate/hibernate-orm' && 'fork' || github.base_ref || github.ref_name }}"
+          CURRENT_BRANCH="${{ github.repository != 'loiclefevre/hibernate-orm-dem' && 'fork' || github.base_ref || github.ref_name }}"
           CURRENT_MONTH=$(/bin/date -u "+%Y-%m")
           CURRENT_DAY=$(/bin/date -u "+%d")
           ROOT_CACHE_KEY="buildtool-cache-atlas"
