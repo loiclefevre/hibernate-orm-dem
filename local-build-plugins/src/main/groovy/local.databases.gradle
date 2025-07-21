@@ -295,7 +295,7 @@ ext {
                     'jdbc.driver': 'oracle.jdbc.OracleDriver',
                     'jdbc.user'  : 'hibernate_orm_test_' + runID,
                     'jdbc.pass'  : dbPassword,
-                    'jdbc.url'   : 'jdbc:oracle:thin:@' + dbHost + ':1521/' + dbService,
+                    'jdbc.url'   : 'jdbc:oracle:thin:@' + dbConnectionStringSuffix,
                     'jdbc.datasource' : 'oracle.jdbc.OracleDriver',
                     'connection.init_sql' : ''
             ],
@@ -304,7 +304,7 @@ ext {
                     'jdbc.driver': 'oracle.jdbc.OracleDriver',
                     'jdbc.user'  : 'hibernate_orm_test_' + runID,
                     'jdbc.pass'  : dbPassword,
-                    'jdbc.url'   : 'jdbc:oracle:thin:@' + dbHost + ':1521/' + dbService,
+                    'jdbc.url'   : 'jdbc:oracle:thin:@' + dbConnectionStringSuffix,
                     'jdbc.datasource' : 'oracle.jdbc.OracleDriver',
                     'connection.init_sql' : ''
             ],
@@ -313,7 +313,7 @@ ext {
                     'jdbc.driver': 'oracle.jdbc.OracleDriver',
                     'jdbc.user'  : 'hibernate_orm_test_' + runID,
                     'jdbc.pass'  : dbPassword,
-                    'jdbc.url'   : 'jdbc:oracle:thin:@' + dbHost + ':1521/' + dbService,
+                    'jdbc.url'   : 'jdbc:oracle:thin:@' + dbConnectionStringSuffix,
                     'jdbc.datasource' : 'oracle.jdbc.OracleDriver',
                     'connection.init_sql' : ''
             ],
