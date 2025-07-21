@@ -10,7 +10,7 @@ ext {
     dbHost = System.getProperty( 'dbHost', 'localhost' )
     dbService = System.getProperty( 'dbService', '' )
     dbPassword = System.getProperty( 'dbPassword', '' )
-    dbConnectionStringSuffix = System.getProperty( 'dbConnectionStringSuffix', '' )
+    dbConnectionStringSuffix = System.getProperty( 'dbConnectionStringSuffix', '' ).replace('"', '');
     runID = System.getProperty( 'runID', '' )
 
     dbBundle = [
