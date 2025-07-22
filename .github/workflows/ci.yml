@@ -107,7 +107,7 @@ jobs:
 
       - id: create_database
         #if: steps.build_guard.outputs.skip_tests == 'no'
-        uses: loiclefevre/test@v1.0.13
+        uses: loiclefevre/test@v1.0.14
         with:
           oci-service: ${{ matrix.rdbms }}
           action: create
@@ -128,7 +128,7 @@ jobs:
         run: ./ci/build-github.sh
         shell: bash
 
-      - uses: loiclefevre/test@v1.0.13
+      - uses: loiclefevre/test@v1.0.14
         #if: steps.build_guard.outputs.skip_tests == 'no'
         if: always()
         with:
