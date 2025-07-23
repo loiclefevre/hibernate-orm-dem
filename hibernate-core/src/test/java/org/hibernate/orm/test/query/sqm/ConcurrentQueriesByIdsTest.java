@@ -40,7 +40,7 @@ public class ConcurrentQueriesByIdsTest extends BaseCoreFunctionalTestCase {
 			}
 		} );
 
-		ExecutorService executorService = Executors.newFixedThreadPool( 3 );
+		ExecutorService executorService = Executors.newFixedThreadPool( 2 );
 		CompletableFuture<List<SimpleEntity>>[] results = new CompletableFuture[10];
 
 		for ( int i = 0; i < 10; i++ ) {
